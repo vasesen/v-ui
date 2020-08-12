@@ -1,12 +1,10 @@
 <template>
   <div>
-    <button>按钮</button>
+    buttondemo
   </div>
 </template>
-
 <script lang="ts">
-import Vue from 'vue'
 export default {
-  
+  name:'ButtonDemo'
 }
 </script>

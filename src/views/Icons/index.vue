@@ -1,12 +1,10 @@
 <template>
   <div>
-    <button>按钮</button>
+    icon
   </div>
 </template>
-
 <script lang="ts">
-import Vue from 'vue'
 export default {
-  
+  name:'IconViews'
 }
 </script>
