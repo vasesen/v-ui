@@ -4,7 +4,7 @@ const Home = ()=> import ("../views/home.vue")
 const Doc = ()=> import('../views/doc.vue')
 const ButtonDemo = ()=>import('../views/button/index.vue')
 const IconViews = () => import('../views/Icons/index.vue')
-
+const SwitchDoc = ()=>import('../views/switch/switchDoc.vue')
 
 const history = createWebHashHistory()
 const router = createRouter({
@@ -17,6 +17,7 @@ const router = createRouter({
       children:[
         {path:"icons",component:IconViews},
         {path:"button",component:ButtonDemo},
+        {path:"switch",component:SwitchDoc},
       ]
     }
   ]

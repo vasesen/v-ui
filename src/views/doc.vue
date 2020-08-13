@@ -1,51 +1,73 @@
 <template>
-  <div>
-    <topnav />
-    <div class="content">
+  <div class="layout">
+    <topnav class="nav" />
+    <div>
       <aside v-if="menuVisible">
         <h3>组件列表</h3>
         <ol>
           <li>
-            <router-link to="/doc/icons">Icon组件</router-link>
+            <router-link to="/doc/icons">Icon 图标</router-link>
           </li>
           <li>
-            <router-link to="/doc/button">Button组件</router-link>
+            <router-link to="/doc/button">Button 按钮</router-link>
           </li>
           <li>
-            <router-link to="/doc/switch">Switch组件</router-link>
+            <router-link to="/doc/switch">Switch 开关</router-link>
           </li>
         </ol>
       </aside>
-      <main>
+      <main class="content">
         <router-view />
       </main>
     </div>
   </div>
 </template>
 <script lang="ts">
-import Topnav from '../components/topnav.vue' 
-import { inject,Ref } from 'vue'
+import Topnav from "../components/topnav.vue";
+import { inject, Ref } from "vue";
 export default {
-  components:{
-    Topnav
+  components: {
+    Topnav,
   },
-  setup(){
-    const menuVisible = inject<Ref<Boolean>>('menuVisible')
-    return {menuVisible}
-  }
-}
+  setup() {
+    const menuVisible = inject<Ref<Boolean>>("menuVisible");
+    return { menuVisible };
+  },
+};
 </script>
 <style lang="scss" scoped>
-aside{
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: rgb(229,234,238,1);
+  .nav {
+    flex-shrink: 0;
+  }
+
+  .content {
+    flex-grow: 1;
+    padding-top: 16px;
+    padding-left: 166px;
+    overflow: auto;
+    @media (max-width: 500px) {
+      padding-left: 0;
+    }
+  }
+}
+
+aside {
   background: oldlace;
+  position: fixed;
   width: 150px;
   padding: 16px;
-  h3{
+  height: 100vh;
+  h3 {
     margin-bottom: 4px;
   }
-  ol{
-    li{
-      padding: 4px  0;
+  ol {
+    li {
+      padding: 8px 0;
     }
   }
   @media (max-width: 500px) {
@@ -53,6 +75,5 @@ aside{
     top: 56px;
     left: 0;
   }
-
 }
 </style>
