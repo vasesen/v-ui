@@ -40,7 +40,7 @@ export default {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background: rgb(229,234,238,1);
+  // background: rgb(229,234,238,1);
   .nav {
     flex-shrink: 0;
   }
