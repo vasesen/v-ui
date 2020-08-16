@@ -9,10 +9,10 @@ export default {
   name:'App',
   setup(){
     const screenWidth = document.documentElement.clientWidth
-    const menuVisible = ref(screenWidth<=500 ? false : true)
+    const menuVisible = ref(screenWidth<=640 ? false : true)
     provide('menuVisible',menuVisible)
     router.afterEach(
-      ()=> menuVisible.value = screenWidth<= 500 ===true ?  false : true
+      ()=> menuVisible.value = screenWidth<= 640 ===true ?  false : true
     )
   }
 }

@@ -1,7 +1,8 @@
 <template>
   <button 
+    class="v-switch"
     @click="toggle" 
-    :disabled = "isDisabled"
+    :disabled = "disabled"
     :class="{checked:value}">
     <span :class="{childChecked:value}"></span>
   </button>
@@ -9,12 +10,13 @@
 <script lang="ts">
 import { ref } from "vue";
 export default {
+  name:'v-switch',
   props:{
     value:{
       type:Boolean,
       default:true
     },
-    isDisabled:{
+    disabled:{
       type:Boolean,
       default:false
     }
@@ -27,17 +29,18 @@ export default {
   },
 };
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
 $h: 22px ;
 $h2: $h - 4px;
-button{
+.v-switch{
+  padding: 1px;
   cursor: pointer;
   height: $h;
   width: $h*2;
   border-radius: $h /2 ;
   background: #cecfde;
-  box-shadow:  1px 1px 2px #afb0bd,
-    1px 1px 2px #edeeff;
+  box-shadow:  1px 1px 2px #a9aab6,
+    1px 1px 2px #f3f4ff;
   border:none;
   position: relative;
 }
@@ -50,20 +53,21 @@ span{
     background: #cecfde;
     border-radius: $h2 / 2;
     transition: left 250ms;
-    box-shadow: inset 1px -1px 2px #afb0bd,
-    inset -1px 1px 2px #edeeff;
+    box-shadow: inset 1px -1px 2px #a9aab6,
+    inset -1px 1px 2px #f3f4ff;
 }
-button.checked>span {
+.v-switch.checked>span {
   left: calc(100% - #{$h2} - 4px);
 }
 .checked{
-  box-shadow: inset  1px 1px 2px #afb0bd,
-  inset  1px 1px 2px #edeeff;
+  box-shadow: inset  1px 1px 2px #a9aab6,
+  inset  1px 1px 2px #f3f4ff;
   height: $h + 2px;
+  top:2px;
 }
 .childChecked{
-  box-shadow: inset -1px 1px 2px #afb0bd,
-  inset 1px -1px 2px #edeeff;
+  box-shadow: inset -1px 1px 2px #a9aab6,
+  inset 1px -1px 2px #f3f4ff;
   height:$h - 1px;
   width: $h - 1px;
 }

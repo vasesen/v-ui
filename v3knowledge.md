@@ -1,0 +1,3 @@
+- vue3.0里 props要先声明才能取值，attrs不用
+- props不包含事件，attrs包含
+- props支持string以外的类型，attrs只用string类型

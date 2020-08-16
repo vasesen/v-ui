@@ -40,7 +40,7 @@ export default {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  // background: rgb(229,234,238,1);
+  background:#cecfde;
   .nav {
     flex-shrink: 0;
   }
@@ -57,11 +57,13 @@ export default {
 }
 
 aside {
-  background: oldlace;
+  background: #cecfde;
   position: fixed;
   width: 150px;
   padding: 16px;
   height: 100vh;
+  box-shadow: 1px 0px 4px #a9aab6,
+     1px 0px 0px #f3f4ff;;
   h3 {
     margin-bottom: 4px;
   }
@@ -70,7 +72,7 @@ aside {
       padding: 8px 0;
     }
   }
-  @media (max-width: 500px) {
+  @media (max-width: 640px) {
     position: fixed;
     top: 56px;
     left: 0;

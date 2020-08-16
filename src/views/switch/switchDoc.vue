@@ -1,19 +1,20 @@
 <template>
   <div>
-    <Switch 
-      v-model:disabled = "isDisabled"
+    <v-switch 
       v-model:value="value" />
+    <v-switch 
+       />
   </div>
 </template>
 <script lang='ts'>
-import Switch from './switch.vue'
+import vSwitch from '../../lib/switch/switch.vue'
 import { ref } from 'vue'
 export default {
-  components:{Switch},
+  components:{vSwitch},
   setup(){
-    const value = ref(true)
-    const isDisabled = ref(false)
-    return {value,isDisabled}
+    const value = ref(false)
+    const disabled = ref(false)
+    return {value,disabled}
   }
 }
 </script>
