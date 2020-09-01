@@ -1,18 +1,17 @@
 <template>
     <button 
-      class="v-button"
-      :class="classes"
-      
+      class="v-button" :class="classes"
       v-bind ="$attrs" >
       <slot />
     </button>
+
 </template>
 
 <script lang="ts">
 import { computed } from 'vue'
 export default {
   name:'v-button',
-  inheritAttrs:false, //继承属性false,取消默认绑定
+  //inheritAttrs:false, 继承属性取消默认绑定 boolen
   props:{
     type:{
       type:String,
@@ -49,6 +48,7 @@ $theme:#cecfde;
   cursor: pointer;
   height: $h;
   padding:0 2em;
+  margin: 4px;
   border-radius: $radius;
   border:none;
   background: $theme;

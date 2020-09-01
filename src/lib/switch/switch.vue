@@ -38,6 +38,7 @@ $h2: $h - 4px;
   height: $h;
   width: $h*2;
   border-radius: $h /2 ;
+  margin:4px;
   background: #cecfde;
   box-shadow:  1px 1px 2px #a9aab6,
     1px 1px 2px #f3f4ff;

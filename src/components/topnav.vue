@@ -1,10 +1,10 @@
 <template>
   <div class="topNav">
-    <span 
+    <!-- <span 
       @click="toggleMenu"
       class="toggleMenu">
-        c
-      </span>
+      </span> -->
+      <close-button  @click="toggleMenu"  v-model:isActive="isActive"   />
     <div class="logo" >
       V-UI</div>
     <ul class="menu">
@@ -21,12 +21,18 @@
   </div>
 </template>
 <script lang="ts">
-import { inject, Ref } from 'vue'
+import CloseButton from './closeButton.vue'
+import { inject, Ref, ref } from 'vue'
 export default {
+  components:{CloseButton}, 
   setup(){
+    let isActive = ref(false)
     const menuVisible = inject<Ref<Boolean>>('menuVisible')
-    const toggleMenu = ()=> {menuVisible.value = !menuVisible.value}
-    return{toggleMenu}
+    const toggleMenu = ()=> {
+      menuVisible.value = !menuVisible.value
+      isActive.value = !menuVisible.value
+    }
+    return{toggleMenu,isActive}
   }
 }
 </script>
